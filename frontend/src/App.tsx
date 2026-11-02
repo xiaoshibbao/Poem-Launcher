@@ -143,7 +143,7 @@ export function App() {
   <div className="art" aria-hidden="true" />
   <div className="scrim" aria-hidden="true" />
   <header className="titlebar">
-   <div className="brand" title={`Poem ${VERSION}`}><strong>Poem <span>Launcher</span></strong></div>
+   <div className="brand" title={`Poem ${VERSION}`}><strong>Poem Launcher</strong></div>
    <nav className="nav glass"><SelectionTrack className="tabs" role="tablist" active={tab}>{tabs.map(t => <button key={t.id} role="tab" id={`tab-${t.id}`} aria-selected={tab === t.id} aria-controls={t.id === 'home' ? undefined : 'panel-body'} className="tab" onClick={() => selectTab(t.id)}>{t.icon}{t.label}{t.state !== undefined && <span className={`tab-state ${t.state ? 'on' : ''}`} aria-label={t.state ? '已开启' : '已关闭'} />}</button>)}</SelectionTrack></nav>
    <div className="window-controls glass">
     {status.running > 0 && <span className="run-chip" title={status.ports.length ? `代理端口 ${status.ports.join(' / ')}` : undefined}><i />运行中 {status.running}</span>}

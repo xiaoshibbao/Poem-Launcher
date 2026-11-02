@@ -38,7 +38,6 @@ svg{flex-shrink:0}
 .titlebar{height:80px;flex-shrink:0;display:flex;align-items:center;gap:20px;padding-left:4px;--wails-draggable:drag}
 .brand{flex:1 1 0;min-width:0;display:flex;align-items:center;padding-left:6px;cursor:default}
 .brand strong{display:block;white-space:nowrap;font:700 26px/1 var(--display);letter-spacing:.3px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 2px 10px rgba(0,0,0,.4))}
-.brand strong span{margin-left:2px}
 .nav{flex-shrink:0;padding:5px;border-radius:18px}
 .window-controls{flex:1 1 0;display:flex;justify-content:flex-end;align-items:center;gap:4px;--wails-draggable:no-drag;background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none}
 .window-controls button{width:42px;height:38px;border:0;border-radius:12px;background:transparent;color:var(--ink-2);display:grid;place-content:center}
