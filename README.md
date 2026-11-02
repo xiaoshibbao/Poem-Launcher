@@ -116,8 +116,25 @@ go test ./internal/...
 - `ProxyHook.dll`、`GameFeatures.dll`、`VisualPatch.dll` 为预编译模块，不在本仓库中分发，也不是从本仓库源码编译的。
 - 游戏版本更新后，模块的特征码可能失效，需要更新模块。
 - 时停、帧率、多开、移动端 UI 等功能依赖游戏内实测，自动化测试只覆盖启动器本身的逻辑。
+## 致谢与来源
+
+Poem Launcher 的部分代码来自 [Cyrene Launcher](https://github.com/Mar7thDev/CyreneLauncher)（Mar7thDev），其上游为 Firefly Shelter 的 Firefly Launcher。两者均以 MIT License 发布，本仓库保留其原始版权声明（见 [LICENSE](LICENSE)）。
+
+| 本仓库 | 来源 |
+| --- | --- |
+| `internal/netproxy` | Cyrene Launcher `pkg/patch-proxy`（私服代理、证书、RSA 与 ec2b 处理） |
+| `internal/injector` | Cyrene Launcher `pkg/injector` |
+| `internal/gamelang`、`internal/gamelang/assetmeta`、`internal/gamelang/excel` | Cyrene Launcher `internal/language-service`、`pkg/language-patch` |
+| `internal/gamever` | Cyrene Launcher `pkg/models` 中的版本文件解析 |
+| `internal/dialog`、`internal/window` | 沿用 Cyrene Launcher 的服务结构（`fs-service`、`app-service`） |
+
+代理钩子 `ProxyHook.dll` 是配合上述代理使用的预编译模块，启动器向它传递参数的环境变量沿用了 `CYRENE_*` 命名。以上代码在 Poem 中经过了修改和扩展，问题请反馈到本仓库，不要打扰上游项目。
+
+其他参考：
+
 - 官服/B服渠道切换参考了 [Collapse Launcher#350](https://github.com/CollapseLauncher/Collapse/issues/350) 与 [Starward](https://github.com/Scighost/Starward) 的 HoYoPlay 接口实现；渠道组件来自 `hyp-api.mihoyo.com` 的 `getGameChannelSDKs` 接口。
+- `native/lua-entry/minhook` 为 [MinHook](https://github.com/TsudaKageyu/minhook) v1.3.4，使用其自带许可证。
 
 ## 许可
 
-本项目以 [MIT License](LICENSE) 发布。`native/lua-entry/minhook` 为 [MinHook](https://github.com/TsudaKageyu/minhook) v1.3.4，使用其自带许可证。游戏美术资源版权归原权利人所有。
+本项目以 [MIT License](LICENSE) 发布，并保留上游 Firefly Shelter 的版权声明。游戏美术资源版权归原权利人所有。
