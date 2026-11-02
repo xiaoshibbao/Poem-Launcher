@@ -1,0 +1,28 @@
+# 仓库只收源码：先忽略根目录全部内容，再逐项放行。
+# 本地构建产物、预编译模块、分析资料和交接文档都不入库。
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/main.go
+!/go.mod
+!/go.sum
+!/build.ps1
+!/assets/
+!/build/
+!/frontend/
+!/internal/
+!/native/
+!/scripts/
+!/tools/
+
+# 预编译 / 构建生成的模块，只保留说明和图标源文件
+/assets/*
+!/assets/README.md
+!/assets/appicon.png
+!/assets/poem-icon-source.png
+
+/frontend/node_modules/
+/frontend/dist/
+/tools/dev-local/
+*.syso
